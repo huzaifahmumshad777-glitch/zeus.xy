@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-accent: "Space Grotesk", sans-serif;
+  
+  --color-primary: #EAB308; /* Yellow-500 from Bento Theme */
+  --color-dark: #0A0A0C;
+  --color-darker: #050505;
+  --color-surface: #121216;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+}
+
+.glass-card {
+  @apply bg-surface border border-white/5 backdrop-blur-md rounded-3xl;
+}
+
+.btn-primary {
+  @apply bg-primary text-black font-extrabold px-8 py-3 rounded-full transition-all hover:bg-white hover:scale-105 active:scale-95 uppercase tracking-tighter text-sm;
+}
+
+.btn-outline {
+  @apply border-2 border-primary/30 text-primary font-bold px-8 py-3 rounded-full transition-all hover:bg-primary hover:text-black uppercase tracking-tighter text-sm;
+}
+
+.bento-card {
+  @apply bg-surface border border-white/5 rounded-[2rem] p-8 shadow-2xl;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
